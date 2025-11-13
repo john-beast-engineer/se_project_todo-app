@@ -14,5 +14,5 @@ Give a description of the technologies and techniques used. Pictures, GIFs, or s
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
-  https://github.com/john-beast-engineer/se_project_todo-app.git
+-## Live Demo
+[View Live Project](https://john-beast-engineer.github.io/se_project_todo-app/)
