@@ -43,7 +43,7 @@ class Todo {
 
     // Apply id and for attributes.
     // The id will initially be undefined for new todos.
-    this.checkbox.id = `todo-${this._data.id}`;
+    this._checkbox.id = `todo-${this._data.id}`;
     todoLabel.setAttribute("for", `todo-${this._data.id}`);
 
     const dueDate = new Date(this._data.date);
