@@ -1,7 +1,13 @@
 class Todo {
-  constructor(data, selector) {
+  constructor(data, selector, { handleCheck, handleDelete } = {}) {
     this._data = data;
     this._selector = selector;
+    this._handleCheck = handleCheck;
+    this._handleDelete = handleDelete;
+  }
+
+  get completed() {
+    return this._data.completed;
   }
 
   _getTemplate() {
@@ -25,10 +31,16 @@ class Todo {
 
   _handleDeleteClick() {
     this._element.remove();
+    if (this._handleDelete) {
+      this._handleDelete();
+    }
   }
 
   _handleCheckboxChange() {
     this._data.completed = !this._data.completed;
+    if (this._handleCheck) {
+      this._handleCheck();
+    }
   }
 
   getView() {
@@ -55,7 +67,6 @@ class Todo {
       })}`;
     }
 
-    // Add event listeners
     this._setEventListeners();
 
     return this._element;
